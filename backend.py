@@ -1,5 +1,5 @@
 import torch
-import torchvision
+# import torchvision
 from torch import nn
 from torchvision import transforms
 from PIL import Image

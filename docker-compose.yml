@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "65535:65535"
+    command: python backend.py
+    environment:
+      - FLASK_ENV=production
+    volumes:
+      - .:/app
