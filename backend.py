@@ -8,6 +8,7 @@ import base64
 import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask import render_template
 
 app = Flask(__name__)
 CORS(app)
@@ -126,7 +127,9 @@ def predict(image_tensor):
         }
     }
 
-
+@app.route('/')
+def index():
+    return render_template('index.html')
 @app.route('/predict', methods=['POST'])
 def predict_api():
     """API endpoint for making predictions"""
